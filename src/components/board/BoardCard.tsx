@@ -31,11 +31,6 @@ export function BoardCard({ board }: BoardCardProps) {
         <h3 className="font-medium text-neutral-900 text-sm leading-snug line-clamp-1">
           {board.title}
         </h3>
-        {board.description && (
-          <p className="mt-0.5 text-xs text-neutral-400 line-clamp-2 leading-relaxed">
-            {board.description}
-          </p>
-        )}
       </div>
 
       {/* Alt bilgi */}
