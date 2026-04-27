@@ -1,6 +1,7 @@
 export type Board = {
   id: string
   title: string
+  description?: string | null // TAM OLARAK BURAYA BUNU EKLE
   owner_id: string
   created_at: string
 }
