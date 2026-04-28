@@ -193,15 +193,16 @@ export function BoardClient({ board, initialColumns }: BoardClientProps) {
           console.warn('[onDragEnd] index bulunamadı', { activeIndex, overIndex })
           return
         }
-        if (activeIndex === overIndex) return
-
-        const reordered = arrayMove(sortedCards, activeIndex, overIndex)
-        const newIdx    = reordered.findIndex(c => c.id === activeId)
-        const before    = reordered[newIdx - 1]?.position ?? null
-        const after     = reordered[newIdx + 1]?.position ?? null
-        newPosition     = getPositionBetween(before, after)
+        if (activeIndex === overIndex) {
+            newPosition = sortedCards[activeIndex].position; // Pozisyon aynıysa bile veritabanına Sütun ID'sini kaydet!
+          } else {
+            const reordered = arrayMove(sortedCards, activeIndex, overIndex)
+            const newIdx    = reordered.findIndex(c => c.id === activeId)
+            const before    = reordered[newIdx - 1]?.position ?? null
+            const after     = reordered[newIdx + 1]?.position ?? null
+            newPosition     = getPositionBetween(before, after)
       }
-
+    }
       console.log('[onDragEnd] yeni pozisyon hesaplandı:', newPosition)
 
       // Optimistik güncelle
