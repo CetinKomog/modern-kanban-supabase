@@ -29,6 +29,7 @@ export function Card({ card, isDragOverlay = false, onClick }: CardProps) {
   const style = {
     transform:  CSS.Transform.toString(transform),
     transition,
+    touchAction: 'none', // İŞTE MOBİLİ KURTARACAK OLAN SİHİRLİ SATIR BU
   }
 
   function handleClick() {

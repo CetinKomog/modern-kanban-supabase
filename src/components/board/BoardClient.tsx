@@ -1,19 +1,7 @@
 'use client'
 
 import { useState, useCallback, useMemo, useEffect } from 'react'
-import {
-  DndContext,
-  DragOverlay,
-  PointerSensor,
-  KeyboardSensor,
-  TouchSensor,
-  useSensor,
-  useSensors,
-  closestCorners,
-  type DragStartEvent,
-  type DragOverEvent,
-  type DragEndEvent,
-} from '@dnd-kit/core'
+import { DndContext, KeyboardSensor, DragOverlay, DragEndEvent, DragOverEvent, DragStartEvent, closestCorners, TouchSensor, useSensor, useSensors, PointerSensor } from '@dnd-kit/core';
 import {
   SortableContext,
   horizontalListSortingStrategy,
